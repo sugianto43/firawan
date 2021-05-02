@@ -1,19 +1,26 @@
 .navbar {
     display: flex;
     position: relative;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
-    background-color: #333;
+    background-color: #24252a;
     color: white;
-    padding: 0px 5%;
+    padding: 10px 5%;
 }
 
 .brand-title {
     font-size: 1.5rem;
-    margin: .5rem 0;
-    font-weight: 700;
+    margin-right: auto;
+    font-weight: bolder;
     font-style: italic;
     cursor: pointer;
+    transition: all 0.3s ease 0s;
+    color: #0088a9;
+}
+
+.brand-title:hover{
+    transition: all 0.3s ease 0s;
+    color: white;
 }
 
 .navbar-links {
@@ -44,15 +51,35 @@
     color: #0088a9;
 }
 
+.user {
+    display: flex;
+    flex-direction: row;
+    margin-left: 60px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.user:hover {
+    color: #0088a9;
+}
+
+.user p {
+    margin-bottom: 0px;
+    align-self: center;
+    padding-left: 5px;
+}
+
 .toggle-button {
     position: absolute;
-    top: .75rem;
+    top: .80rem;
     right: 1rem;
     display: none;
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
     height: 21px;
+    margin-top: 10px;
+    margin-right: 3%;
 }
 
 .toggle-button .bar {
@@ -61,6 +88,14 @@
     background-color: white;
     border-radius: 10px;
 }
+
+.toggle-button .bars {
+    height: 3px;
+    width: 100%;
+    background-color: #0088a9;
+    border-radius: 10px;
+}
+
 
 @media (max-width: 800px) {
     .navbar {
@@ -84,6 +119,10 @@
 
     .navbar-links ul li {
         text-align: center;
+    }
+
+    .user {
+       margin-left: 0px;
     }
 
     .navbar-links ul li a {
