@@ -8,7 +8,6 @@ import "./Table.css";
 function Table() {
   const params = useParams();
   const detailData = data[params.id];
-  console.log(detailData.currencys);
   return (
     <>
       <div className="orders">

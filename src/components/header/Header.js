@@ -13,32 +13,31 @@ function header() {
 
   return (
     <>
-      <nav class="navbar">
-        <Link to="/" class="brand-title" style={{ textDecoration: "none" }}>
+      <nav className="navbar">
+        <Link to="/" className="brand-title" style={{ textDecoration: "none" }}>
           <div>FIRAWAN</div>
         </Link>
         <a
           href="/"
-          class="toggle-button"
-          activeClassName="active"
+          className="toggle-button"
           onClick={handleClick}
         >
-          <span class={click ? "bar bars" : "bar"}></span>
-          <span class={click ? "bar bars" : "bar"}></span>
-          <span class={click ? "bar bars" : "bar"}></span>
+          <span className={click ? "bar bars" : "bar"}></span>
+          <span className={click ? "bar bars" : "bar"}></span>
+          <span className={click ? "bar bars" : "bar"}></span>
         </a>
-        <div class={click ? "navbar-links active" : "navbar-links"}>
+        <div className={click ? "navbar-links active" : "navbar-links"}>
           <ul style={{ alignItems: "center" }}>
             <li>
               <Link to="/">
-                <a href="?">Home</a>
+                <a href="/">Home</a>
               </Link>
             </li>
             <li>
-              <a href="?">About</a>
+              <a href="/">About</a>
             </li>
             <li>
-              <a href="?">Contact</a>
+              <a href="/">Contact</a>
             </li>
             <li className="user">
               <i

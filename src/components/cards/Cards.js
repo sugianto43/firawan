@@ -4,7 +4,6 @@ import "./Cards.css";
 import data from "../../data/data";
 
 function Cards() {
-  console.log(data);
   return (
     <div className="cards-container">
       {data.map((datas, idx) => (
