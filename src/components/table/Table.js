@@ -5,13 +5,16 @@ import { useParams } from "react-router-dom";
 import data from "../../data/data";
 import "./Table.css";
 
-function Table(props) {
+function Table() {
   const params = useParams();
   const detailData = data[params.id];
   console.log(detailData.currencys);
   return (
     <>
-    <div className="orders">Detail Transaction for Account: <span style={{color: '#0088a9'}}> {detailData.accountNumber}</span> </div>
+      <div className="orders">
+        Detail Transaction for Account:{" "}
+        <span style={{ color: "#0088a9" }}> {detailData.accountNumber}</span>{" "}
+      </div>
       <div
         className="table-contents table-responsive"
         style={{

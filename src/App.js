@@ -1,4 +1,3 @@
-import "./App.css";
 import { Route, Switch } from "react-router";
 import Cards from "./components/cards/Cards";
 import Header from "./components/header/Header";

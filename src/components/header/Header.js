@@ -14,8 +14,8 @@ function header() {
   return (
     <>
       <nav class="navbar">
-        <Link to="/" class="brand-title" style={{textDecoration: 'none'}}>
-          <div >FIRAWAN</div>
+        <Link to="/" class="brand-title" style={{ textDecoration: "none" }}>
+          <div>FIRAWAN</div>
         </Link>
         <a
           href="/"
