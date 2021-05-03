@@ -10,7 +10,7 @@
 
 .brand-title {
     font-size: 1.5rem;
-    margin-right: auto;
+    margin-right: auto !important;
     font-weight: bolder;
     font-style: italic;
     cursor: pointer;
@@ -123,6 +123,7 @@
 
     .user {
        margin-left: 0px;
+       margin-top: 40px;
     }
 
     .navbar-links ul li a {

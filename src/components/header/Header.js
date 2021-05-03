@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Header.css";
 
 function header() {
@@ -13,7 +14,9 @@ function header() {
   return (
     <>
       <nav class="navbar">
-        <div class="brand-title">FIRAWAN</div>
+        <Link to="/" class="brand-title" style={{textDecoration: 'none'}}>
+          <div >FIRAWAN</div>
+        </Link>
         <a
           href="/"
           class="toggle-button"
@@ -27,7 +30,9 @@ function header() {
         <div class={click ? "navbar-links active" : "navbar-links"}>
           <ul style={{ alignItems: "center" }}>
             <li>
-              <a href="?">Home</a>
+              <Link to="/">
+                <a href="?">Home</a>
+              </Link>
             </li>
             <li>
               <a href="?">About</a>

@@ -29,18 +29,22 @@
     font-weight: bold;
 }
 
+.text p {
+    color: black;
+}
+
 .text span {
     color: #0088a9;
 }
 
 @media (max-width: 900px) {
-    .card-container {
+    .cards-container {
         display: flex;
-        flex-direction: column;
+        flex-direction: column !important;
     }
 
     .card {
-        width: 100%;
+        width: 100% !important;
         margin-bottom: 20px;
     }
 }

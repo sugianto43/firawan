@@ -1,34 +1,21 @@
 /* eslint-disable no-dupe-keys */
 /* eslint-disable array-callback-return */
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { useParams } from "react-router-dom";
+import data from "../../data/data";
 import "./Table.css";
 
-function Table() {
-  const [datas, setDatas] = useState([]);
-  useEffect(() => {
-    const loadData = async () => {
-      await axios
-        .get(
-          "https://ecdba7fe-ec10-4d90-8d0e-80f8364c7624.mock.pstmn.io/takehometest/frontend/web/dashboard"
-        )
-        .then((res) => {
-          console.log("data", res.data.data.orders);
-          setDatas(res.data.data.orders);
-        })
-        .catch((err) => {
-          console.error(err);
-        });
-    };
-    loadData();
-  }, []);
+function Table(props) {
+  const params = useParams();
+  const detailData = data[params.id];
+  console.log(detailData.currencys);
   return (
     <>
+    <div className="orders">Detail Transaction for Account: <span style={{color: '#0088a9'}}> {detailData.accountNumber}</span> </div>
       <div
         className="table-contents table-responsive"
         style={{
           width: "auto",
-          marginTop: '80px'
         }}
       >
         <table className="table">
@@ -52,40 +39,23 @@ function Table() {
             </tr>
           </thead>
           <tbody>
-            {datas.map((data, idx) => {
+            {detailData.transaction.map((data, idx) => {
               return (
                 <tr key={idx}>
                   <td className="data-table">
-                    <p className="text-table">#{data.order_id.slice(0, 4)}</p>
+                    <p className="text-table">{data.date}</p>
                   </td>
                   <td className="data-table">
-                    <p
-                      className="text-table status"
-                      style={{
-                        backgroundColor:
-                          data.status === "pending"
-                            ? "#E59849"
-                            : "" || data.status === "canceled"
-                            ? "#D66D4B"
-                            : "" || data.status === "completed"
-                            ? "#789764"
-                            : "",
-                        borderRadius: "4px",
-                        padding: "5px 10px",
-                        textAlign: "center",
-                      }}
-                    >
-                      {data.status}
-                    </p>
+                    <p className="text-table">{data.currencys}</p>
                   </td>
                   <td className="data-table">
-                    <p className="text-table">{data.full_name}</p>
+                    <p className="text-table">{data.debit}</p>
                   </td>
                   <td className="data-table">
-                    <p className="text-table">{data.location}</p>
+                    <p className="text-table">{data.credit}</p>
                   </td>
                   <td className="data-table">
-                    <p className="text-table">{data.start_date}</p>
+                    <p className="text-table">{data.description}</p>
                   </td>
                 </tr>
               );
